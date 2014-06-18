@@ -3,7 +3,7 @@ Node.js勉強会 2014/6/14
 
 ## Slide
 
-[Framework Koa](http://www.slideshare.net/kamiyam/nodejs-framework-koa)
+[Scalable Node.js with Redis Store](http://www.slideshare.net/kamiyam/npp02slide)
 
 ## Sample
 

@@ -36,17 +36,17 @@ app.use(express.urlencoded());
 
 app.use(express.cookieParser( "secret", session.secret ));
 
-//SessionStore
+/// SessionStore
 app.use(express.session({
   key: session.key,
   cookie: {maxAge: 1000 * 60 * 60 * 24 * 7, "httpOnly":false},
-  store: new SessionStore({
-    client: client,
-    db: 1,
-    prefix: 'session:',
-    port: 6379,
-    host: "localhost"
-  })
+  // store: new SessionStore({
+  //   client: client,
+  //   db: 1,
+  //   prefix: 'session:',
+  //   port: 6379,
+  //   host: "localhost"
+  // })
 }));
 
 app.use(express.methodOverride());
@@ -68,8 +68,8 @@ var io = require('socket.io').listen(server);
 var SocketStore = require('socket.io/lib/stores/redis');
 io.configure(function() {
 
-  //Store
-  io.set('store', new SocketStore({pub:pub, sub:sub, client:client}));
+  /// Store
+  // io.set('store', new SocketStore({pub:pub, sub:sub, client:client}));
 
   io.set('transports', [
   'websocket',

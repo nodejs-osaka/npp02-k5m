@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%- title %></title>
+
+  <!-- Viewport mobile tag for sensible mobile support -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="csrf-token" content="<%= _csrf %>" >
+
+  <% // for reverse-proxy
+  var tag1 = "<script>window.sailsPort = " + sails.config.port + "</script>" %>
+  <%- tag1 %>
+
+  <% // FaceBook App
+  var tag2 = "<script>window.appId = " + sails.config.facebook.appId + "</script>" %>
+  <%- tag2 %>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <!--
+      Stylesheets and Preprocessors
+      ==============================  -->
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+  <!-- Bootstrap theme -->
+  <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="/vendor/font-awesome-animation/css/font-awesome-animation.min.css"/>
+
+  <!--STYLES-->
+  <link rel="stylesheet" href="/min/production.min.css">
+  <!--STYLES END-->
+
+  <!--
+    Client-side Templates
+    ======================== -->
+
+  <!--TEMPLATES-->
+  <script type="text/javascript" src="/jst.js"></script>
+  <!--TEMPLATES END-->
+
+
+  <!--
+    Client-side Javascript
+    ======================== -->
+
+  <!--SCRIPTS-->
+  <script src="/min/production.min.js"></script>
+  <!--SCRIPTS END-->
+
+  <%-stylesheets%>
+
+  <%-scripts%>
+
+</head>
+<body>
+  <script>new Router()</script>
+
+  <%-blocks.header_scripts%>
+
+  <%- body %>
+
+  <%-blocks.footer_scripts%>
+
+</body>
+</html>

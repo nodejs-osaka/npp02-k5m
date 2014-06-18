@@ -11,10 +11,10 @@ Node.js勉強会 2014/6/14
 
 ```
 $ cd sample/ExpressChat
-app.js
+node app.js
 ```
 
-### RedisStore使用
+### RedisStoreを使う
 
 ```
 
